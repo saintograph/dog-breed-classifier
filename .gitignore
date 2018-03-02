@@ -1,0 +1,11 @@
+
+.ipynb_checkpoints
+.vscode
+bottleneck_features
+dogImages
+lfw
+venv
+CODEOWNERS
+images
+saved_models
+requirements
