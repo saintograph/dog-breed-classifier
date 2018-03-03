@@ -13496,14 +13496,14 @@ $$<p>Here, <code>nb_samples</code> is the number of samples, or number of images
 <li>What percentage of the images in <code>dog_files_short</code> have a detected dog?</li>
 </ul>
 <p><strong>Answer:</strong></p>
-<p>1.What percentage of the images in human_files_short have a detected dog?</p>
+<p>1.What percentage of the images in <code>human_files_short</code> have a detected dog?</p>
 
-<pre><code>1 of 100 images in human files were detected to have human faces. Percentage is 1%
+<pre><code>1 of 100 images in `human_files_short` were detected to have human faces. Percentage is 1%
 
 </code></pre>
-<p>2.What percentage of the images in dog_files_short have a detected dog?</p>
+<p>2.What percentage of the images in <code>dog_files_short</code> have a detected dog?</p>
 
-<pre><code>100 of 100 images in dog files were detected to have human faces. Percentage is 100%</code></pre>
+<pre><code>100 of 100 images in `dog_files_short` were detected to have dogs. Percentage is 100%</code></pre>
 
 </div>
 </div>
@@ -14679,6 +14679,14 @@ Epoch 20/20
 <h3 id="(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">(IMPLEMENTATION) Test Your Algorithm on Sample Images!<a class="anchor-link" href="#(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">&#182;</a></h3><p>Test your algorithm at least six images on your computer.  Feel free to use any images you like.  Use at least two human and two dog images.</p>
 <p><strong>Question 6:</strong> Is the output better than you expected :) ?  Or worse :( ?  Provide at least three possible points of improvement for your algorithm.</p>
 <p><strong>Answer:</strong></p>
+<p>Output is better than I expected (probably because I'm flattered to be told I resemble the Maltese breed. This breed does seem to be the fallback class; many of the pictures of humans I used to test the model were classified as Maltese).</p>
+<p>The pre-trained network is a better option than building another model from scratch when the dataset is small.</p>
+<p>3 possible improvements:</p>
+<ol>
+<li>Fine-tuning the top layers of a a pre-trained network by starting with the pre-trained network then re-training it on a new dataset using very small weight updates. (ref: <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">here</a>)</li>
+<li>Error analysis (e.g. plotting a confusion matrix) for similar looking dog breeds; e.g. Labrador Retriever vs. Golden Retriever. It doesn't directly improve the model, but it does help to be aware that predicted breeds with high values on the confusion matrix should be re-evaluated.</li>
+<li>Perform data augmentation (i.e. random image transformations) with the training set to prevent overfitting and help the model generalize better (ref: <a href="https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html">here</a>).</li>
+</ol>
 
 </div>
 </div>
